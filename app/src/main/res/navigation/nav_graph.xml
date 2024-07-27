@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/homeFragment">
+
+    <fragment
+        android:id="@+id/homeFragment"
+        android:name="kz.hack.coumrah.HomeFragment"
+        android:label="fragment_home"
+        tools:layout="@layout/fragment_home" >
+        <action
+            android:id="@+id/action_homeFragment_to_placesFragment"
+            app:destination="@id/placesFragment" />
+        <action
+            android:id="@+id/action_homeFragment_to_guideFragment"
+            app:destination="@id/guideFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/placesFragment"
+        android:name="com.example.hajjurmah.places.PlacesFragment"
+        android:label="fragment_list"
+        tools:layout="@layout/fragment_list" >
+        <action
+            android:id="@+id/action_placesFragment_to_locationFragment"
+            app:destination="@id/locationFragment" >
+            <argument
+                android:name="idName"
+                app:argType="string" />
+        </action>
+    </fragment>
+    <fragment
+        android:id="@+id/locationFragment"
+        android:name="com.example.hajjurmah.location.LocationFragment"
+        android:label="fragment_detailed"
+        tools:layout="@layout/fragment_detailed" >
+        <argument
+            android:name="idName"
+            app:argType="string" />
+    </fragment>
+    <fragment
+        android:id="@+id/guideFragment"
+        android:name="com.example.hajjurmah.guide.GuideFragment"
+        android:label="fragment_guide"
+        tools:layout="@layout/fragment_guide" />
+</navigation>

@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "700497472012",
+    "project_id": "coumrah",
+    "storage_bucket": "coumrah.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:700497472012:android:d334c3b0151b85b9429c29",
+        "android_client_info": {
+          "package_name": "kz.hack.coumrah"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDcfVPc6IRGVl7JsWD6U5u7uzLFcYV3bSw"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
