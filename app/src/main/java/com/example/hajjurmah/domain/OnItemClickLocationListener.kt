@@ -1,6 +1,4 @@
-package com.example.hajjurmah
-
-import com.google.gson.annotations.SerializedName
+package com.example.hajjurmah.domain
 
 interface OnItemClickLocationListener {
     fun onClickToLocation(

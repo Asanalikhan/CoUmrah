@@ -1,4 +1,4 @@
-package com.example.hajjurmah.guide
+package com.example.hajjurmah.presentation.guide
 
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData

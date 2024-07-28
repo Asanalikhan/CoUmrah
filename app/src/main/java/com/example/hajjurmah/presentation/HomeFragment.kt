@@ -1,13 +1,12 @@
-package kz.hack.coumrah
+package com.example.hajjurmah.presentation
 
 import android.os.Bundle
-import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.navigation.fragment.findNavController
-import com.google.firebase.firestore.FirebaseFirestore
+import kz.hack.coumrah.R
 import kz.hack.coumrah.databinding.FragmentHomeBinding
 
 class HomeFragment : Fragment() {

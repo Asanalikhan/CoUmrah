@@ -1,9 +1,9 @@
-package com.example.hajjurmah.location
+package com.example.hajjurmah.presentation.location
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
-import com.example.hajjurmah.OnItemClickLocationListener
+import com.example.hajjurmah.domain.OnItemClickLocationListener
 import com.example.hajjurmah.data.LocationResponse
 import kz.hack.coumrah.databinding.ItemLocationBinding
 
@@ -11,12 +11,12 @@ class LocationAdapter : RecyclerView.Adapter<LocationAdapter.PlacesViewHolder>()
 
     private val placesList = mutableListOf<LocationResponse>()
     private var itemClickListener: OnItemClickLocationListener? = null
-    private val adapterPhoto = PhotoAdapter()
+
 
     inner class PlacesViewHolder(private val binding: ItemLocationBinding) : RecyclerView.ViewHolder(binding.root) {
         fun onBind(placeResponse: LocationResponse) {
             binding.name.text = placeResponse.title
-
+            val adapterPhoto = PhotoAdapter()
             binding.rcImage.adapter = adapterPhoto
             binding.description.text = placeResponse.description
             adapterPhoto.submitList(placeResponse.photo)

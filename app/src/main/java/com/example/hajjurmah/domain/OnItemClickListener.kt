@@ -1,4 +1,4 @@
-package com.example.hajjurmah
+package com.example.hajjurmah.domain
 
 interface OnItemClickListener {
     fun onItemClick(name: String)

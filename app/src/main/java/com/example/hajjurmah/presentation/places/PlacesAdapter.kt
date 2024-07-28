@@ -1,13 +1,12 @@
-package com.example.hajjurmah.places
+package com.example.hajjurmah.presentation.places
 
 import android.annotation.SuppressLint
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
-import com.example.hajjurmah.OnItemClickListener
+import com.example.hajjurmah.domain.OnItemClickListener
 import com.example.hajjurmah.data.PlaceModel
-import com.example.hajjurmah.data.PlaceResponse
 import kz.hack.coumrah.databinding.ItemPlacesBinding
 
 class PlacesAdapter : RecyclerView.Adapter<PlacesAdapter.PlacesViewHolder>() {

@@ -1,12 +1,9 @@
-package com.example.hajjurmah.location
+package com.example.hajjurmah.presentation.location
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
-import com.example.hajjurmah.OnItemClickListener
-import com.example.hajjurmah.data.LocationResponse
-import kz.hack.coumrah.databinding.ItemLocationBinding
 import kz.hack.coumrah.databinding.ItemPhotoBinding
 
 class PhotoAdapter  : RecyclerView.Adapter<PhotoAdapter.PlacesViewHolder>() {

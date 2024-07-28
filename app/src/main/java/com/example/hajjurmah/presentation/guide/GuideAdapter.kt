@@ -1,38 +1,40 @@
-package com.example.hajjurmah.guide
+package com.example.hajjurmah.presentation.guide
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
-import com.example.hajjurmah.OnItemClickLocationListener
+import com.example.hajjurmah.domain.OnItemClickLocationListener
 import com.example.hajjurmah.data.GuideResponse
-import com.example.hajjurmah.location.PhotoAdapter
+import com.example.hajjurmah.domain.OnItemClickCall
+import com.example.hajjurmah.presentation.location.PhotoAdapter
 import kz.hack.coumrah.databinding.ItemGuideBinding
 
 class GuideAdapter() : RecyclerView.Adapter<GuideAdapter.GuideViewHolder>() {
 
     private val guideList = mutableListOf<GuideResponse>()
-    private var itemClickListener: OnItemClickLocationListener? = null
+    private var itemClickListener: OnItemClickCall? = null
     private val adapterPhoto = PhotoAdapter()
 
     inner class GuideViewHolder(private val binding: ItemGuideBinding) : RecyclerView.ViewHolder(binding.root) {
         fun onBind(guideResponse: GuideResponse) {
-            binding.nameGuide.text = guideResponse.nameGuide
-            binding.positionGuide.text = guideResponse.positionGuide
-            binding.title.text = guideResponse.title
-            binding.data.text = guideResponse.data
-            binding.description.text = guideResponse.description
-            Glide.with(binding.root).load(binding.photoGuide).into(binding.photoGuide)
-            binding.time.text = guideResponse.time
-            binding.descriptionGuide.text = guideResponse.descriptionGuide
-
+            binding.cost.text = guideResponse.cost
+            binding.data.text = "${guideResponse.data}, ${guideResponse.time}"
+            binding.available.text = guideResponse.availablePlace
+            binding.photoToursRecyclerView.adapter = adapterPhoto
             adapterPhoto.submitList(guideResponse.photoTours)
-            binding.root.setOnClickListener {
-
+            binding.nameGuide.text = guideResponse.title
+            binding.descriptionGuide.text = guideResponse.description
+            Glide.with(binding.root.context).load(guideResponse.photoGuide).into(binding.photoGuide)
+            binding.title.text = guideResponse.nameGuide
+            binding.positionGuide.text = guideResponse.positionGuide
+            binding.description.text = guideResponse.descriptionGuide
+            binding.btnCall.setOnClickListener {
+                itemClickListener?.onItemClick(guideResponse.phone)
             }
         }
     }
-    fun setOnItemClickListener(listener: OnItemClickLocationListener) {
+    fun setOnItemClickListener(listener: OnItemClickCall) {
         this.itemClickListener = listener
     }
 
